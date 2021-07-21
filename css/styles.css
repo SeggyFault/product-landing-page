@@ -1,0 +1,330 @@
+/*VARIABLES*/
+:root {
+  /*COLORS*/
+  --color-primary: #8eeaad;
+  --color-secondary: #232323;
+  --color-emphasis: #ff3232;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-disabled: #575757;
+  /*FONTS*/
+  --font-primary: "Montserrat", sans-serif;
+  --font-size-header: 72px;
+  --font-size-description: 32px;
+  --font-size-date: 12px;
+}
+
+/*RESET*/
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-size: 100%;
+  font-family: inherit;
+  background: none;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+/*CSS GRID*/
+/*Main*/
+#content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 130px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/*Nested - Reviews*/
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.reviews-header {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.review-1 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.review-2 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 5;
+}
+
+/*Nested - Articles*/
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.articles-header {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.article1 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.article2 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.article3 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.articles-footer {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+}
+
+/*HEADER*/
+.main-header {
+  background-image: url("../img/cacti-bg.png");
+  height: 600px;
+}
+
+.nav-bar {
+  height: 70px;
+  /*position: fixed;*/
+  background-color: var(--color-secondary);
+}
+
+.nav-link a {
+  color: var(--color-light);
+  text-transform: uppercase;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-light);
+  background-image: url("../img/cacti-hero-img.png");
+  background-size: 600px;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: center;
+  height: 600px;
+  width: 600px;
+  box-shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: var(--font-size-header);
+}
+
+.description {
+  text-align: center;
+  font-size: var(--font-size-description);
+}
+
+/*Section*/
+.section {
+  border-top: 10px solid var(--color-dark);
+  margin-bottom: 50px;
+}
+
+.section-header {
+  text-transform: uppercase;
+}
+
+/*Reviews*/
+.reviews {
+  background-image: url("../img/cacti-bg.png");
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.review {
+  width: 513px;
+  height: 291px;
+  background-color: var(--color-light);
+  border: 5px solid var(--color-dark);
+  box-shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
+}
+
+/*Articles*/
+.articles-btn {
+  padding: 20px 60px;
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+}
+
+/*Article*/
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+}
+
+.article-img {
+  background-color: var(--color-light);
+  border: 5px solid var(--color-dark);
+  width: 315px; /*Do better sizing*/
+  height: 260px;
+  background-repeat: no-repeat;
+  background-size: 275px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
+  margin-bottom: 15px;
+}
+
+.article-img-1 {
+  background-image: url("../img/cacti-article-1.png");
+}
+
+.article-img-2 {
+  background-image: url("../img/cacti-article-2.png");
+}
+
+.article-img-3 {
+  background-image: url("../img/cacti-article-3.png");
+}
+
+.article-date {
+  color: var(--color-emphasis);
+  font-size: var(--font-size-date);
+}
+
+.article-header {
+  text-transform: uppercase;
+}
+
+.article-title {
+  display: inline;
+}
+
+.article-footer {
+  align-self: flex-start;
+}
+
+.article-link {
+  text-decoration: underline;
+}
+
+/*FOOTER*/
+.cacti-footer {
+  background-color: var(--color-secondary);
+  height: 400px;
+  display: flex;
+  padding-top: 70px;
+}
+
+/*Footer menu*/
+.footer-menu {
+  margin-right: auto;
+}
+
+.footer-menu-list-item {
+  display: block;
+}
+
+.footer-menu-list-link {
+  color: var(--color-light);
+  text-transform: uppercase;
+}
+
+/*Social media*/
+.social-media-list {
+  margin-left: auto;
+}
+
+.social-media-list-item {
+  margin-right: 40px;
+}
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 500px) {
+  /*Nested - Reviews*/
+  .reviews {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .review-1 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .review-2 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  /*Nested - Articles*/
+  .articles {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .articles-header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .article1 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .article2 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .article3 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .articles-footer {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+}

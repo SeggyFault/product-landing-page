@@ -18,47 +18,97 @@
 
 <body>
     <div id="content">
+
         <header id="header" class="main-header">
+            <!--Main nav-->
             <nav id="nav-bar" class="nav-bar">
-                <ul>
+                <a href="#"><img id="header-img" src="img/cacti-logo.png" alt="cacti logo"></a>
+
+                <ul class="nav-list">
                     <li class="nav-link">
-                        <img id="header-img" src="img/cacti-logo.png" alt="cacti logo">
+                        <button><a href="#most-popular">most popular</a></button>
                     </li>
                     <li class="nav-link">
-                        <button><a href="#section1">plants</a></button>
+                        <button><a href="#reviews">reviews</a></button>
                     </li>
                     <li class="nav-link">
-                        <button><a href="#section2">kits</a></button>
+                        <button><a href="#articles">articles</a></button>
                     </li>
-                    <li class="nav-link">
-                        <button><a href="#section3">sale</a></button>
+                </ul>
+                <!--Login nav-->
+                <ul class="login-list">
+                    <li class="login-list-item">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="12" cy="7" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="login-list-item">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="login-list-item">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="6" cy="19" r="2" />
+                                <circle cx="17" cy="19" r="2" />
+                                <path d="M17 17h-11v-14h-2" />
+                                <path d="M6 5l14 1l-1 7h-13" />
+                            </svg>
+                        </a>
                     </li>
                 </ul>
             </nav>
-            <section class="presentation">
-                <h1 class="title">cacti</h1>
-                <p class="description">Photogenic cactuses for your next intagram photo in our <strong>succulent shop</strong>
-                </p>
-                <button class="cta">Grab one</button>
-            </section>
         
+            <!--Hero-->
+            <section class="presentation">
+                <h1 class="title">cacti.</h1>
+                <p class="description">Photogenic cactuses for your next <strong>intagram photo</strong>
+                </p>
+                <button class="btn btn-dark">Grab one</button>
+            </section>
+            <!--Pop-up-nav-->
+                <nav class="pop-up-nav">
+                    <ul class="pop-up-list">
+                        <li class="pop-up-list-item succulent-plants">
+                            <h3 class="pop-up-header">Succulent Plants</h3>
+                            <button class="btn btn-light"><a href="#">Shapely</a></button>
+                        </li>
+                        <li class="pop-up-list-item cactus">
+                            <h3 class="pop-up-header">Cactus</h3>
+                            <button class="btn btn-dark"><a href="#">100% Introvert</a></button>
+                        </li>
+                        <li class="pop-up-list-item air-plants">
+                            <h3 class="pop-up-header">Air Plants</h3>
+                            <button class="btn btn-light"><a href="#">So Fly</a></button>
+                        </li>
+                    </ul>
+                </nav>
         </header>
-        <main class="main-content">
-            <!--<video id="video" src="#"></video>-->
-            
-            <!--<form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
-                <fieldset>
-                    <legend>Email</legend>
-                    <input id="email" type="email" placeholder="Your email" />
-                    <label for="email"></label>
-                    <button id="submit" type="submit" form="form" value="Submit">Submit</button>
-                </fieldset>
-            </form>-->
 
+        <main class="main-content">
+
+            <!--Most popular-->
             <section id="most-popular" class="section">
                 <header class="section-header">
                     <h2>most popular</h2>
                 </header>
+                <section class="box">
+                    <h3 class="product-header">echeveria</h3>
+                    <img src="/img/product-img.png" alt="echeveria">
+                </section>
+                <button class="btn btn-dark">Load more products</button>
             </section>
 
             <!--Reviews-->
@@ -67,9 +117,7 @@
                     <h2>reviews</h2>
                 </header>
 
-                <section class="review review-1">
-                
-                </section>
+                <section class="review review-1"></section>
                 <section class="review review-2"></section>
 
             </section>
@@ -151,11 +199,33 @@
                     </article>
                     
                     <footer class="articles-footer">
-                        <button class="articles-btn">
+                        <button class="btn btn-dark">
                             <a class="articles-link" href="#">Load more articles</a>
                         </button>
                     </footer>
                     
+            </section>
+
+            <!--Video-->
+            <section class="section video">
+                <header class="section-header">
+                    <h2>Take me with you!</h2>
+                </header>
+
+                <video id="video" controls width="640" class="box">
+                <source src="img/Mini cactus.mp4" type="video/mp4">
+                Sorry, your browser doesn't support embedded videos.
+                </video>
+            </section>
+
+            <!--Newsletter-->
+            <section class="newsletter">
+                <h3>Interested? Sign for our newsletter!</h3>
+                <form id="form" class="newsletter-form" action="https://www.freecodecamp.com/email-submit" method="POST">
+                        <input id="email" type="email" placeholder="Your email" />
+                        <label for="email" class="email-label">Email</label>
+                        <button class="btn btn-dark" id="submit" type="submit" form="form" value="Submit">Submit</button>
+                </form>
             </section>
         </main>
         
@@ -209,7 +279,7 @@
         
         </footer>
     </div>
-    
+
 </body>
 
 </html>

@@ -5,16 +5,24 @@
   --color-secondary: #232323;
   --color-emphasis: #ff3232;
   --color-light: #ffffff;
+  --color-light-hover: #f7f7f7;
   --color-dark: #000000;
   --color-disabled: #575757;
   /*FONTS*/
   --font-primary: "Montserrat", sans-serif;
   --font-size-header: 72px;
   --font-size-description: 32px;
+  --font-size-section-header: 32px;
   --font-size-date: 12px;
+  /*STYLES*/
+  --shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
 }
 
 /*RESET*/
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -44,7 +52,36 @@ figure {
 }
 
 body {
+  margin: 0 auto;
   font-family: var(--font-primary);
+}
+
+/*Buttons*/
+.btn {
+  padding: 20px 60px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transition: 0.2s;
+}
+
+.btn-dark {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+}
+
+.btn-dark:hover {
+  background-color: var(--color-dark);
+}
+
+.btn-light {
+  background-color: var(--color-light);
+  color: var(--color-secondary);
+}
+
+.btn-light:hover {
+  background-color: var(--color-light-hover);
 }
 
 /*CSS GRID*/
@@ -52,9 +89,30 @@ body {
 #content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 130px;
+  grid-row-gap: 100px;
   max-width: 960px;
   margin: 0 auto;
+}
+
+/*Nested - Header*/
+.main-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, minmax(70px, auto));
+}
+
+.nav-bar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.presentation {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.pop-up-nav {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
 }
 
 /*Nested - Reviews*/
@@ -112,15 +170,32 @@ body {
 }
 
 /*HEADER*/
-.main-header {
-  background-image: url("../img/cacti-bg.png");
-  height: 600px;
+.nav-bar {
+  display: flex;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 20px 30px;
+  background-color: var(--color-secondary);
 }
 
-.nav-bar {
-  height: 70px;
-  /*position: fixed;*/
-  background-color: var(--color-secondary);
+.nav-list {
+  margin-right: auto;
+}
+
+.login-list {
+  margin-left: auto;
+  color: var(--color-light);
+  text-transform: uppercase;
+}
+
+.nav-link,
+.login-list-item {
+  margin-right: 15px;
 }
 
 .nav-link a {
@@ -128,40 +203,117 @@ body {
   text-transform: uppercase;
 }
 
+.nav-link a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+
 .presentation {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 50px;
+
   background-color: var(--color-light);
   background-image: url("../img/cacti-hero-img.png");
-  background-size: 600px;
   background-repeat: no-repeat;
-  background-position-y: bottom;
+  background-size: 50%;
+  background-position-y: 120px;
   background-position-x: center;
-  height: 600px;
-  width: 600px;
-  box-shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
 }
 
 .title {
   text-transform: uppercase;
   font-size: var(--font-size-header);
+  margin-bottom: 0;
 }
 
 .description {
   text-align: center;
   font-size: var(--font-size-description);
+  margin-top: 15px;
+}
+
+/*Nested - Pop-up*/
+.pop-up-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 0;
+}
+
+.pop-up-nav {
+  padding: 25px;
+  background-color: var(--color-light);
+  border: 5px solid var(--color-dark);
+  box-shadow: var(--shadow);
+}
+
+.pop-up-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.pop-up-header {
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.succulent-plants,
+.air-plants {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+}
+
+.succulent-plants,
+.cactus,
+.air-plants {
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position-x: 175px;
+  background-position-y: top;
+}
+
+.succulent-plants {
+  background-image: url("/img/succulents.png");
+}
+
+.air-plants {
+  background-image: url("/img/air-plants.png");
+}
+
+.cactus {
+  background-image: url("/img/cactus.png");
+  background-color: var(--color-primary);
 }
 
 /*Section*/
 .section {
   border-top: 10px solid var(--color-dark);
-  margin-bottom: 50px;
 }
 
 .section-header {
   text-transform: uppercase;
+  font-size: var(--font-size-section-header);
+}
+
+/*Most popular*/
+.box {
+  background-color: var(--color-light);
+  border: 5px solid var(--color-dark);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.box img {
+  width: 30%;
+}
+
+.product-header {
+  text-transform: uppercase;
+  font-size: 24px;
 }
 
 /*Reviews*/
@@ -178,14 +330,7 @@ body {
   height: 291px;
   background-color: var(--color-light);
   border: 5px solid var(--color-dark);
-  box-shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
-}
-
-/*Articles*/
-.articles-btn {
-  padding: 20px 60px;
-  background-color: var(--color-secondary);
-  color: var(--color-light);
+  box-shadow: var(--shadow);
 }
 
 /*Article*/
@@ -205,7 +350,7 @@ body {
   background-size: 275px;
   background-position-x: center;
   background-position-y: center;
-  box-shadow: 5px 5px 15px 1px rgba(22, 22, 22, 0.2);
+  box-shadow: var(--shadow);
   margin-bottom: 15px;
 }
 
@@ -242,12 +387,33 @@ body {
   text-decoration: underline;
 }
 
+/*Newsletter*/
+.newsletter {
+  background-color: var(--color-primary);
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.email-label {
+  display: none;
+}
+
 /*FOOTER*/
 .cacti-footer {
   background-color: var(--color-secondary);
-  height: 400px;
   display: flex;
-  padding-top: 70px;
+
+  /*position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
 }
 
 /*Footer menu*/
@@ -273,9 +439,17 @@ body {
   margin-right: 40px;
 }
 
+/*ANIMATION*/
+
 /*MEDIA QUERIES*/
 
 @media only screen and (max-width: 500px) {
+  /*Nested-Pop-up*/
+  .pop-up-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   /*Nested - Reviews*/
   .reviews {
     display: grid;
